@@ -25,7 +25,7 @@ function CreateAndSendTransaction {
 
     # Make the API call to create a new transaction
     try {
-        $response = Invoke-RestMethod -Uri $apiUrl -Method Post -Headers @{ "Authorisation" = "Bearer $apiKey"; "Content-Type" = "application/json" } -Body $requestBody
+        $response = Invoke-RestMethod -Uri $apiUrl -Method Post -Headers @{ "Authorization" = "Bearer $apiKey"; "Content-Type" = "application/json" } -Body $requestBody
 
         # Display the transaction ID
         [System.Windows.Forms.MessageBox]::Show("Transaction Created Successfully. Transaction ID: $($response.id)")
